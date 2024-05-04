@@ -50,13 +50,13 @@ function Homepage() {
 
   useEffect(()=>{
     if(maxSizeMB > 500){
-      setQuality("Best");
+      setQuality("Max");
     }
     if(maxSizeMB <= 500){
-      setQuality("Better");
+      setQuality("Mid");
     }
     if(maxSizeMB <= 250){
-      setQuality("Good");
+      setQuality("Min");
     }
     
   }, [maxSizeMB])
