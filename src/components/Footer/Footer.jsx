@@ -1,13 +1,15 @@
 import React from "react";
 import "./footer.css";
 import download_icon from "../../assets/downlad_icon.jpg";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
     <>
       <footer>
         <div className="container">
-          <h1>compressor.</h1>
+          <h1><Link to={"/"} className="link">compressor.
+          </Link></h1>
           <div className="footer-details">
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam

@@ -9,6 +9,9 @@ footer h1{
     font-size: 44px;
     letter-spacing: 2px;
 }
+h1 .link{
+    text-decoration: none;
+}
 .footer-details{
     margin-top: 20px;
     display: flex;
@@ -28,6 +31,8 @@ footer h1{
     display: flex;
     justify-content: flex-end;
     gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .social-links img{
     width: 50px;
