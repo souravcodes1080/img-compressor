@@ -1,0 +1,66 @@
+footer{
+    margin-top: 80px;
+    padding-top: 40px;
+    color: white !important;
+    background-color: rgb(39, 38, 38);
+}
+footer h1{
+    font-family: "Abril Fatface", serif;
+    font-size: 44px;
+    letter-spacing: 2px;
+}
+.footer-details{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.footer-details p{
+    width: 400px;
+    text-align: justify;
+}
+.footer-details ul{
+    list-style: none;
+}
+.footer-details li{
+    padding-bottom: 20px;
+}
+.social-links{
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+.social-links img{
+    width: 50px;
+    border-radius: 100px;
+}
+
+footer p{
+    padding: 10px 0;
+    text-align: center;
+}
+footer a{
+    color: white;
+    text-decoration: underline;
+}
+
+@media (max-width: 800px){
+    footer h1{
+        text-align: center;
+    }
+    .footer-details p{
+        width: 350px;
+    }
+   .footer-details{
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+   }
+   .footer-details li{
+    padding-bottom: 10px;
+}
+   .social-links{
+    margin-top: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+   }
+}
