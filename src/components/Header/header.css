@@ -1,0 +1,33 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-logo h1{
+    padding: 20px 0 24px 0;
+    font-family: "Abril Fatface", serif;
+    font-size: 44px;
+}
+
+.header-options ul{
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.header-options ul li{
+    cursor: pointer;
+}
+
+.header-options ul li:hover{
+    color: blue;
+}
+
+@media (max-width: 800px){
+    header{
+        justify-content: center;
+    }
+    .header-options ul li{
+        display: none;
+    }
+}

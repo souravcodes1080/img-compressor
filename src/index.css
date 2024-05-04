@@ -1,13 +1,33 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap');
+
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body{
+  box-sizing: border-box;
+  background-color: #fff;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 16px;
+}
+.container{
+  width: 1200px;
+  margin: auto;
+}
+
+@media (max-width: 1200px){
+  .container{
+      width: 800px;
+  }
+}
+@media (max-width: 800px){
+  .container{
+      width: 500px;
+  }
+}
+@media (max-width: 500px){
+  .container{
+      width: 95%
+  }
 }
