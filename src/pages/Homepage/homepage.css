@@ -23,27 +23,27 @@ main .main-left {
   display: flex;
   justify-content: space-between;
   border: 1px dashed rgba(0, 0, 0, 0.274);
-  
+
   padding: 20px 20px;
   border-radius: 15px;
   cursor: pointer;
 }
 .left-settings .max-size-slider {
-  color:rgba(0, 0, 0, 0.544);
+  color: rgba(0, 0, 0, 0.544);
   padding: 20px 20px;
   border-radius: 15px;
   font-size: 16px;
 }
-.max-size-slider input{
-    margin-top: 10px;
-    height: 2px;
-    cursor: pointer;
-    width: 100%;
+.max-size-slider input {
+  margin-top: 10px;
+  height: 2px;
+  cursor: pointer;
+  width: 100%;
 }
-.max-size-slider p{
-    display: flex;
+.max-size-slider p {
+  display: flex;
 
-    justify-content: space-between;
+  justify-content: space-between;
 }
 .left-settings select {
   border: 1px solid rgba(0, 0, 0, 0.274);
@@ -58,8 +58,6 @@ main .main-left {
 .upload-image {
   width: 100%;
 }
-
-
 
 .compressed-image-description {
   display: flex;
@@ -87,31 +85,41 @@ main .main-left {
   padding: 25px 45px;
   font-size: 16px;
 }
-.disabled{
-    opacity: 0.5;
-    cursor: not-allowed !important;
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed !important;
 }
 
-.main-right{
-    flex: 2;
-    height: 100%;
-     display: flex;
-    justify-content: center;
-    align-items: center;
-    
+.main-right {
+  position: relative;
+  flex: 2;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
 }
-.compressed-image{
-    
-    height: 400px;
-   
+.main-right a {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
-.compressed-image img{
-    /* width: 100%;
+.compressed-image {
+  height: 400px;
+}
+.compressed-image img {
+  /* width: 100%;
     height: 100%; */
-    height: 400px;
-    max-height: 100%;
-    border-radius: 15px;
-    
+  height: 400px;
+  max-height: 100%;
+  border-radius: 15px;
 }
 /* main .main-right {
     margin-left: 20px;
@@ -137,44 +145,47 @@ main .main-left {
     border-radius: 15px;
 } */
 
-@media (max-width:1200px){
-    .compressed-image{
-    
-        height: 300px;
-       
-    }
-    .compressed-image img{
-        /* width: 100%;
+@media (max-width: 1200px) {
+  .compressed-image {
+    height: 300px;
+  }
+  .compressed-image img {
+    /* width: 100%;
         height: 100%; */
-        height: 300px;
-        max-height: 100%;
-        border-radius: 15px;
-        
-    }
+    height: 300px;
+    max-height: 100%;
+    border-radius: 15px;
+  }
 }
 
-@media (max-width:800px){
-    main{
-        flex-direction: column;
-        align-items: center;
-    }
-    .main-left {
-       gap: 30px;
-       margin-bottom: 50px;
-       width: 90%;
-    }
-    .main-right .compressed-image{
-        align-items: center;
-    }
+@media (max-width: 800px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
+  .main-left {
+    gap: 30px;
+    margin-bottom: 50px;
+    width: 90%;
+  }
+  .main-right .compressed-image {
+    align-items: center;
+  }
+  .main-right{
+    flex-direction: column;
+  }
+  .main-right a{
+    position: relative;
+  }
 }
-@media (max-width:500px){
-    main{
-        height: 100%;
-    }
-    .main-right{
-        transform: scale(0.7);
-    }
-    /* .main-right img{
+@media (max-width: 500px) {
+  main {
+    height: 100%;
+  }
+  .main-right {
+    transform: scale(0.7);
+  }
+  /* .main-right img{
         max-width: 450px;
      } */
 }

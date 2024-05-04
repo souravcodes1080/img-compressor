@@ -1,11 +1,14 @@
 import React from "react";
 import "./header.css";
+import { Link } from "react-router-dom";
 function Header() {
   return (
     <>
       <header>
         <div className="header-logo">
-          <h1>compressor.</h1>
+          <h1>
+            <Link className="link" to={"/"}>compressor.</Link>
+          </h1>
         </div>
         <div className="header-options">
           <ul>

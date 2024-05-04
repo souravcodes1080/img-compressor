@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from "react";
 import right_arrow from "../../assets/right_arrow.png";
 import imageCompression from "browser-image-compression";
-
+import download_icon from "../../assets/downlad_icon.jpg"
 import "./homepage.css";
 function Homepage() {
   const [image, setImage] = useState(false);
   const [imageFile, setImageFile] = useState(null);
-  const [maxSizeMB, setMaxSizeMB] = useState("250")
-  const [quality, setQuality] = useState("")
-  const [maxResolution, setMaxResolution] = useState("")
+  const [maxSizeMB, setMaxSizeMB] = useState("250");
+  const [quality, setQuality] = useState("");
+  const [maxResolution, setMaxResolution] = useState("");
   const [imageName, setImageName] = useState("");
   const [compressedImage, setCompressedImage] = useState(null);
   const [compressedImageSize, setCompressedImageSize] = useState("");
   const [loading, setLoading] = useState(false);
-
 
   const onImageChangeHandler = (e) => {
     const imageFile = e.target.files[0];
@@ -26,40 +25,38 @@ function Homepage() {
 
   const onSubmitHandler = async (e) => {
     try {
-      if(!image){
-        return
+      if (!image) {
+        return;
       }
-      if(maxResolution === ""){
-        return
+      if (maxResolution === "") {
+        return;
       }
       setLoading(true);
       const options = {
-      maxSizeMB: maxSizeMB /1024,
-      useWebWorker: true,
-      maxWidthOrHeight: maxResolution,
-    };
-    const compressedFile = await imageCompression(imageFile, options);
-    setCompressedImageSize(Math.floor(compressedFile.size / 1024));
-    setCompressedImage(URL.createObjectURL(compressedFile));
-    setLoading(false);
+        maxSizeMB: maxSizeMB / 1024,
+        useWebWorker: true,
+        maxWidthOrHeight: maxResolution,
+      };
+      const compressedFile = await imageCompression(imageFile, options);
+      setCompressedImageSize(Math.floor(compressedFile.size / 1024));
+      setCompressedImage(URL.createObjectURL(compressedFile));
+      setLoading(false);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-    
   };
 
-  useEffect(()=>{
-    if(maxSizeMB > 500){
+  useEffect(() => {
+    if (maxSizeMB > 500) {
       setQuality("Max");
     }
-    if(maxSizeMB <= 500){
+    if (maxSizeMB <= 500) {
       setQuality("Mid");
     }
-    if(maxSizeMB <= 250){
+    if (maxSizeMB <= 250) {
       setQuality("Min");
     }
-    
-  }, [maxSizeMB])
+  }, [maxSizeMB]);
 
   return (
     <>
@@ -77,14 +74,24 @@ function Homepage() {
                 accept="image/*"
                 onChange={onImageChangeHandler}
               />
-              
             </div>
             <div className="max-size-slider">
-              <p><span>Compression quality</span> {quality}</p> 
-              <input type="range" min="1" max="1024" value={maxSizeMB} onChange={(e)=>setMaxSizeMB(e.target.value)}/>
+              <p>
+                <span>Compression quality</span> {quality}
+              </p>
+              <input
+                type="range"
+                min="1"
+                max="1024"
+                value={maxSizeMB}
+                onChange={(e) => setMaxSizeMB(e.target.value)}
+              />
             </div>
 
-            <select onChange={(e)=>setMaxResolution(e.target.value)} value={maxResolution}>
+            <select
+              onChange={(e) => setMaxResolution(e.target.value)}
+              value={maxResolution}
+            >
               <option value="">Select resolution</option>
               <option value="1080">1080px</option>
               <option value="720">720px</option>
@@ -100,7 +107,10 @@ function Homepage() {
               </span>
               <span>{compressedImageSize} KB</span>
             </div>
-            <button onClick={onSubmitHandler} className={!image ? 'disabled': '' }>
+            <button
+              onClick={onSubmitHandler}
+              className={!image ? "disabled" : ""}
+            >
               <p>Compress Image</p>
               <img src={right_arrow} alt="right_arrow_icon" width={"15px"} />
             </button>
@@ -108,11 +118,18 @@ function Homepage() {
         </div>
         <div className="main-right">
           {!loading ? (
-            <div className="compressed-image">
-              <a href={compressedImage} download="compressed_img">
+            <>
+              <div className="compressed-image">
                 <img src={compressedImage} alt="" />
-              </a>
-            </div>
+              </div>
+              {compressedImage ? (
+                <a href={compressedImage} download="compressed_img">
+                  Download <img src={download_icon} alt="" width={"16px"}/>
+                </a>
+              ) : (
+                <></>
+              )}
+            </>
           ) : (
             <div className="compressed-image">Processing...</div>
           )}
