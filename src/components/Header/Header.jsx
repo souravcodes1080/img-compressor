@@ -12,7 +12,7 @@ function Header() {
         </div>
         <div className="header-options">
           <ul>
-            <li>About Us</li>
+            <li><Link className="link" to={"/about"}>About Us</Link></li>
             <li>Pricing</li>
             <li>Contact Us</li>
           </ul>
